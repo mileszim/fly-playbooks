@@ -1,0 +1,25 @@
+# app = 'siyuan'
+primary_region = 'sjc'
+
+[build]
+  image = 'b3log/siyuan'
+
+[env]
+  SIYUAN_WORKSPACE_PATH = '/siyuan/workspace'
+  # SIYUAN_ACCESS_AUTH_CODE=set-as-fly-secret
+
+[[mounts]]
+  source = 'siyuan_workspace'
+  destination = '/siyuan/workspace'
+  initial_size = '1g'
+
+[http_service]
+  internal_port = 6806
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '256mb'
+  cpus = 1
