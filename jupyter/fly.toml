@@ -1,0 +1,21 @@
+# app = 'jupyter'
+primary_region = 'sjc'
+
+[build]
+  image = 'jupyter/minimal-notebook:python-3.11.6'
+
+[[mounts]]
+  source = 'jupyter_data_machines'
+  destination = '/home/jovyan'
+  initial_size = '1g'
+
+[http_service]
+  internal_port = 8888
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '256mb'
+  cpus = 1
