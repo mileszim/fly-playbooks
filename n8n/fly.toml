@@ -1,0 +1,21 @@
+# app = 'n8n'
+primary_region = 'sjc'
+
+[build]
+  image = 'docker.n8n.io/n8nio/n8n'
+
+[[mounts]]
+  source = 'n8n_data'
+  destination = '/home/node/.n8n'
+  initial_size = '1g'
+
+[http_service]
+  internal_port = 5678
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '512mb'
+  cpus = 1
