@@ -1,0 +1,25 @@
+# app = 'nocodb'
+primary_region = 'sjc'
+
+[build]
+  image = 'nocodb/nocodb:latest'
+
+[env]
+  # (OPTIONAL) uncomment and set the following to connect to a Fly PostgreSQL instance
+  # NC_DB="pg://your-fly-pg-db.internal:5432?u=root&p=password&d=d1"
+
+[[mounts]]
+  source = 'nocodb_data'
+  destination = '/usr/app/data/'
+  initial_size = '1g'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '512mb'
+  cpus = 1
