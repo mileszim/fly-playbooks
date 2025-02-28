@@ -13,3 +13,4 @@ Monorepo collection of fly.toml and Dockerfile etc collections for deployment.
 - [NocoDB](https://github.com/nocodb/nocodb)
 - [Redis](https://redis.io/docs/latest/)
 - [SiYuan](https://github.com/siyuan-note/siyuan)
+- [surrealdb](https://github.com/surrealdb/surrealdb)
