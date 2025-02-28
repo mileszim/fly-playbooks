@@ -1,0 +1,37 @@
+# app = 'redis'
+primary_region = 'sjc'
+
+[experimental]
+  cmd = ['redis-server', '/usr/local/etc/redis/redis.conf']
+
+[build]
+  image = 'redis'
+
+[[mounts]]
+  source = 'redis_data'
+  destination = '/data'
+  initial_size = '1g'
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 6379
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+  [[services.ports]]
+    port = 6379
+    handlers = ['tls', 'http']
+
+  [[services.ports]]
+    port = 443
+    handlers = ['tls', 'http']
+
+[[vm]]
+  memory = '256mb'
+  cpus = 1
+
+[[files]]
+  guest_path = '/usr/local/etc/redis/redis.conf'
+  local_path = 'redis.conf'
