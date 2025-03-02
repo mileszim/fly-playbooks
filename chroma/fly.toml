@@ -1,0 +1,25 @@
+app = 'chroma'
+primary_region = 'sjc'
+
+[build]
+  image = 'chromadb/chroma'
+
+[[mounts]]
+  source = 'chroma_data'
+  destination = '/chroma/chroma'
+  initial_size = '1g'
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[files]]
+  guest_path = '/config.yaml'
+  local_path = 'config.yaml'
+
+[[vm]]
+  memory = '256mb'
+  cpus = 1

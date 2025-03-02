@@ -5,6 +5,7 @@ Monorepo collection of fly.toml and Dockerfile etc collections for deployment.
 ## Playbooks
 
 - [Actual](https://github.com/actualbudget/actual)
+- [Chroma](https://github.com/chroma-core/chroma)
 - [Dragonfly](https://www.dragonflydb.io)
 - [Jupyter](https://jupyter.org)
 - [Maybe](https://github.com/maybe-finance/maybe)
