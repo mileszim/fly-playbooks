@@ -1,6 +1,6 @@
 # Minecraft on Fly.io
 
-For more configuration options, see: https://docker-minecraft-server.readthedocs.io/en/latest/variables/
+For more configuration options, see [the minecraft config](https://docker-minecraft-server.readthedocs.io/en/latest/variables/)
 
 ## Instructions
 
